@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo 'Starting the build'
                 sh "/usr/bin/docker build -t amritase/jenkins-rbac:v$BUILD_NUMBER ."
-                sh '/usr/bin/docker push amritase/jenkins-rbac'
+                sh "/usr/bin/docker push amritase/jenkins-rbac:v$BUILD_NUMBER"
                 echo 'image built and pushed to dockerhub'
             }
         }
