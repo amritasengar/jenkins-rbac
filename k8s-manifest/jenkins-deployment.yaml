@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: jenkins
-        image: amritasengar/jenkins-rbac
+        image: amritase/jenkins-rbac
         ports:
         - containerPort: 8080
