@@ -12,11 +12,11 @@ pipeline {
         }
         stage('Deploy Image') {
             steps {
-                echo 'Deploying the Image'
-                sh 'sed -i "s/amritasengar\/jenkins-rbac/amritasengar\/jenkins-rbac:v1/g" ./k8s-manifest/jenkins-deployment.yaml '
-                sh 'kubectl apply -f ./k8s-manifest/*'
+                echo "Deploying the Image"
+                sh "sed -i 's/jenkins-rbac/jenkins-rbac:v1/g' ./k8s-manifest/jenkins-deployment.yaml"
+                sh "kubectl apply -f ./k8s-manifest/*"
                 echo 'Image Deployed'
-                sh 'kubectl get svc -o wide'
+                sh "kubectl get svc -o wide"
             }
         }
     }
