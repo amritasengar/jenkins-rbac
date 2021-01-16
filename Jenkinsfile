@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo "Deploying the Image"
                 sh "sed -i 's/jenkins-rbac/jenkins-rbac:v1/g' ./k8s-manifest/jenkins-deployment.yaml"
-                sh "kubectl apply -f ./k8s-manifest/*"
+                sh "kubectl apply -f ./k8s-manifest"
                 echo 'Image Deployed'
                 sh "kubectl get svc -o wide"
             }
