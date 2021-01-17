@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: jenkins-pvc
 spec:
-  storageClassName: default
+  storageClassName: standard
   accessModes:
     - ReadWriteOnce
   resources:
