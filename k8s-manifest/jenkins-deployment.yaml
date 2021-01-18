@@ -19,10 +19,3 @@ spec:
         image: amritase/jenkins-rbac
         ports:
         - containerPort: 8080
-        volumeMounts:
-        - mountPath: "/var/jenkins_home"
-          name: mypd
-      volumes:
-      - name: mypd
-        persistentVolumeClaim:
-          claimName: jenkins-pvc
